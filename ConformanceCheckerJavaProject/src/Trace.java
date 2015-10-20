@@ -1,7 +1,6 @@
 /**
  * @(#) Trace.java
  */
-
 public class Trace
 {
     private int missingTokens;

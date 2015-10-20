@@ -1,7 +1,6 @@
 /**
  * @(#) Case.java
  */
-
 public class Case
 {
     private long ID;

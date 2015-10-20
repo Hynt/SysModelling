@@ -1,7 +1,6 @@
 /**
  * @(#) ConformanceChecker.java
  */
-
 public class ConformanceChecker
 {
     private Metrics metrics;

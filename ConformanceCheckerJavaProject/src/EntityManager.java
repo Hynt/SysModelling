@@ -1,7 +1,6 @@
 /**
  * @(#) EntityManager.java
  */
-
 public class EntityManager
 {
     public PetriNet getPetriNet( String petriNetPath )

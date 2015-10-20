@@ -1,7 +1,6 @@
 /**
  * @(#) EventLog.java
  */
-
 public class EventLog
 {
     private Case cases;

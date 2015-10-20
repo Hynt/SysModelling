@@ -1,7 +1,6 @@
 /**
  * @(#) Metrics.java
  */
-
 public class Metrics
 {
     private float fitness;

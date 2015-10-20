@@ -1,7 +1,6 @@
 /**
  * @(#) Place.java
  */
-
 public class Place
 {
     private String name;

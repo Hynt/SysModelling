@@ -1,7 +1,6 @@
 /**
  * @(#) PetriNet.java
  */
-
 public class PetriNet
 {
     private Place places;

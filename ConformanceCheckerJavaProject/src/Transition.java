@@ -1,7 +1,6 @@
 /**
  * @(#) Transition.java
  */
-
 public class Transition
 {
     private PetriNet pteriNet;

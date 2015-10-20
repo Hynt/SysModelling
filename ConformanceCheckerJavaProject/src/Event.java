@@ -1,7 +1,6 @@
 /**
  * @(#) Event.java
  */
-
 public class Event
 {
     private date timestamp;
