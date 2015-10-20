@@ -9,36 +9,36 @@ public class Metrics
     
     private float SSA;
 
-    public Metrics() {
+    public Metrics( ) {
     }
 
-    public Metrics(float fitness, float SBA, float SSA) {
+    public Metrics( float fitness, float SBA, float SSA ) {
         this.fitness = fitness;
         this.SBA = SBA;
         this.SSA = SSA;
     }
 
-    public float getFitness() {
+    public float getFitness( ) {
         return fitness;
     }
 
-    public void setFitness(float fitness) {
+    public void setFitness( float fitness ) {
         this.fitness = fitness;
     }
 
-    public float getSBA() {
+    public float getSBA( ) {
         return SBA;
     }
 
-    public void setSBA(float SBA) {
+    public void setSBA( float SBA ) {
         this.SBA = SBA;
     }
 
-    public float getSSA() {
+    public float getSSA( ) {
         return SSA;
     }
 
-    public void setSSA(float SSA) {
+    public void setSSA( float SSA ) {
         this.SSA = SSA;
     }
 }

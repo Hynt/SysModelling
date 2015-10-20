@@ -17,7 +17,7 @@ public class Trace
     
     private int numberOfCases;
 
-    public float getMeanNumberOfEnabledTransitions() {
+    public float getMeanNumberOfEnabledTransitions( ) {
         return (float)enabledTransitionsCount/events.length;
     }
 
@@ -64,23 +64,23 @@ public class Trace
         this.enabledTransitionsCount += enabledTransitionsCount;
     }
 
-    public int getMissingTokens() {
+    public int getMissingTokens( ) {
         return missingTokens;
     }
 
-    public int getRemainingTokens() {
+    public int getRemainingTokens( ) {
         return remainingTokens;
     }
 
-    public int getConsumedTokens() {
+    public int getConsumedTokens( ) {
         return consumedTokens;
     }
 
-    public int getProducedTokens() {
+    public int getProducedTokens( ) {
         return producedTokens;
     }
 
-    public int getNumberOfCases() {
+    public int getNumberOfCases( ) {
         return numberOfCases;
     }
 }

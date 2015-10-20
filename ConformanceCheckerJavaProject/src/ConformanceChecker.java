@@ -25,7 +25,7 @@ private EventLog eventLog;
         );
     }
     
-    public float calculateFitness(Trace[] traces)
+    public float calculateFitness( Trace[] traces )
     {
 
         int a = 0, b = 0, c = 0, d = 0;
@@ -41,7 +41,7 @@ private EventLog eventLog;
         return 1 - ((float)a/b+(float)c/d)/2;
     }
 
-    public float calculateSBA(Trace[] traces)
+    public float calculateSBA( Trace[] traces )
     {
         int tv = petriNet.numberOfTransitions();
 
@@ -56,7 +56,7 @@ private EventLog eventLog;
         return sum1 / ((tv-1)*sum2);
     }
 
-    public float calculateSSA()
+    public float calculateSSA( )
     {
         return
             (float)(petriNet.numberOfTransitions() + 2)
