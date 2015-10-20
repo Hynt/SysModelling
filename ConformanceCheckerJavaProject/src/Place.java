@@ -29,4 +29,11 @@ public class Place
     }
     
     
+
+    public int getTokens( )
+    {
+        return 0;
+    }
+    
+    
 }

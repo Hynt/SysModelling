@@ -3,12 +3,18 @@
  */
 public class PetriNet
 {
-    private Place places;
+    private Place[] places;
     
-    private Transition transitions;
-    
-    private ConformanceChecker confChecker;
-    
+    private Transition[] transitions;
+
+    public int numberOfTransitions( )
+    {
+        return transitions.length;
+    }
+    public int numberOfPlaces( )
+    {
+        return places.length;
+    }
     public Transition getNextTransition( )
     {
         return null;
@@ -22,6 +28,13 @@ public class PetriNet
     public Place getNextPlace( )
     {
         return null;
+    }
+    
+    
+
+    public int countEnabledTransitions( )
+    {
+        return 0;
     }
     
     
