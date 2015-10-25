@@ -1,13 +1,16 @@
+import java.util.Date;
+import java.util.HashMap;
+
 /**
  * @(#) Event.java
  */
 public class Event
 {
-    private date timestamp;
+    private Date timestamp;
     
     private String name;
     
-    private Collection event_attributes;
+    private HashMap event_attributes;
     
     private Trace traces;
     
@@ -15,7 +18,7 @@ public class Event
     
     public String getName( )
     {
-        return null;
+        return name;
     }
     
     

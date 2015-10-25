@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /**
  * @(#) Case.java
  */
@@ -5,7 +7,7 @@ public class Case
 {
     private long ID;
     
-    private Collection caseAttributes;
+    private HashMap caseAttributes;
     
     private Trace trace;
     
@@ -13,7 +15,7 @@ public class Case
     
     public Trace getTrace( )
     {
-        return null;
+        return trace;
     }
     
     
