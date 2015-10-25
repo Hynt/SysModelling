@@ -12,7 +12,7 @@ public class Place
     private Transition transitionTP;
     
     private Transition transitionPT;
-    
+
     public void incrementTokens( )
     {
         
@@ -34,6 +34,9 @@ public class Place
     {
         return 0;
     }
-    
-    
+
+
+    public boolean isStart() {
+        return start;
+    }
 }
