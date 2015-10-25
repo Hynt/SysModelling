@@ -13,13 +13,13 @@ public class Trace
     
     private int producedTokens;
     
-    private List cases; //TODO suunatud assotiation, pole cases listi tarvis
+    private List<Case> cases; //TODO suunatud assotiation, pole cases listi tarvis
     
-    private List events;
+    private List<Event> events;
     
     private int numberOfCases;
     
-    public Trace( List events ) {
+    public Trace(List<Event> events) {
 		super();
 		this.events = events;
 	}
