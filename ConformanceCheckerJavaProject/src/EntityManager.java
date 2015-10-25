@@ -1,19 +1,19 @@
 import java.util.LinkedList;
+import org.deckfour.xes.model.*;
 import java.util.Date;
 import org.deckfour.xes.extension.std.*;
-import org.deckfour.xes.model.*;
 
 /**
  * @(#) EntityManager.java
  */
 public class EntityManager
 {
-    static public PetriNet getPetriNet( String petriNetPath )
+    public static PetriNet getPetriNet( String petriNetPath )
     {
         return null;
     }
     
-    static public EventLog getEventLog( String eventLogPath )
+    public static EventLog getEventLog( String eventLogPath )
     {
     	
     	LinkedList<Case> cases = new LinkedList<Case>();

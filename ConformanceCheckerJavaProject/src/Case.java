@@ -13,7 +13,7 @@ public class Case
 
 	private EventLog eventLog; //TODO Suunatud assotiation siia
     
-    public Case(long iD, Map caseAttributes, Trace trace) {
+    public Case( long iD, Map caseAttributes, Trace trace ) {
 		super();
 		ID = iD;
 		this.caseAttributes = caseAttributes;

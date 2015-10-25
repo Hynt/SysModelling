@@ -36,7 +36,7 @@ public class Place
     }
 
 
-    public boolean isStart() {
+    public boolean isStart( ) {
         return start;
     }
 }

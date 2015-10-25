@@ -1,5 +1,5 @@
-import java.util.Date;
 import java.util.Map;
+import java.util.Date;
 
 /**
  * @(#) Event.java
@@ -16,7 +16,7 @@ public class Event
     
     private Transition transitions; //TODO Event-transition assotiation yle vaadata
     
-    public Event(Date timestamp, String name, Map event_attributes) {
+    public Event( Date timestamp, String name, Map event_attributes ) {
 		super();
 		this.timestamp = timestamp;
 		this.name = name;
