@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * @(#) Trace.java
  */
@@ -11,14 +13,19 @@ public class Trace
     
     private int producedTokens;
     
-    private Case cases;
+    private List<Case> cases; //TODO suunatud assotiation, pole cases listi tarvis
     
-    private Event[] events;
+    private List<Event> events;
     
     private int numberOfCases;
+    
+    public Trace(List<Event> events) {
+		super();
+		this.events = events;
+	}
 
-    public float getMeanNumberOfEnabledTransitions( ) {
-        return (float)enabledTransitionsCount/events.length;
+	public float getMeanNumberOfEnabledTransitions( ) {
+        return (float)enabledTransitionsCount/events.size();
     }
 
     private int enabledTransitionsCount;

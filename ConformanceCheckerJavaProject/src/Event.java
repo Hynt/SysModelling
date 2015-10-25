@@ -1,5 +1,5 @@
 import java.util.Date;
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @(#) Event.java
@@ -10,13 +10,20 @@ public class Event
     
     private String name;
     
-    private HashMap event_attributes;
+    private Map event_attributes;
     
-    private Trace traces;
+    private Trace traces; //TODO Suunatud assotiation siia
     
-    private Transition transitions;
+    private Transition transitions; //TODO Event-transition assotiation yle vaadata
     
-    public String getName( )
+    public Event(Date timestamp, String name, Map event_attributes) {
+		super();
+		this.timestamp = timestamp;
+		this.name = name;
+		this.event_attributes = event_attributes;
+	}
+
+	public String getName( )
     {
         return name;
     }
