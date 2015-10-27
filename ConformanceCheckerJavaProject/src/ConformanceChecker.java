@@ -39,8 +39,7 @@ private EventLog eventLog;
                     }
                     i++;
                 }
-                transition.fire();
-                //TODO the fire stuff
+                transition.fire(trace);
             }
         	trace.addToEnabledTransitionsSum(petriNet.countEnabledTransitions());
         }
