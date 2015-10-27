@@ -12,9 +12,8 @@ public class Case
     private Trace trace;
 
 	
-public Case( long iD, Map caseAttributes, Trace trace ) {
-		super();
-		ID = iD;
+	public Case( long ID, Map caseAttributes, Trace trace ) {
+		this.ID = ID;
 		this.caseAttributes = caseAttributes;
 		this.trace = trace;
 	}

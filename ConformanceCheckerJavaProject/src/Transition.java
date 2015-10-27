@@ -19,7 +19,7 @@ public class Transition
 
     public String getEventLabel( )
     {
-        return null;
+        return eventLabel;
     }
 
     public List<Place> getInputPlaces() {

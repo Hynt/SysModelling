@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * @(#) Place.java
  */
@@ -6,29 +8,25 @@ public class Place
     private String name;
     
     private int tokens;
-    
-    
-
 
     public Place( String name ) {
-		super();
 		this.name = name;
 		this.tokens = 0;
 	}
 
 	public void incrementTokens( )
     {
-        
+        tokens++;
     }
     
     public void decrementTokens( )
     {
-        
+        tokens++;
     }
     
     public void removeAllTokens( )
     {
-        
+        tokens = 0;
     }
     
     
@@ -39,11 +37,11 @@ public class Place
 
 	public int getTokens( )
     {
-        return 0;
+        return tokens;
     }
 
     public boolean isStart( ) {
-        return start;
+        return name.equals("p1");
     }
 
 	@Override
