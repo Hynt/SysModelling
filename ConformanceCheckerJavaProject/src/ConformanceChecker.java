@@ -93,25 +93,21 @@ private EventLog eventLog;
     
     private Trace[] createTraceSet( EventLog eventLog )
     {
-    	HashMap<String, Trace> traces = new HashMap<String, Trace>();
-    	
-    	Iterator<Case> caseIter = eventLog.iterator();
-    	while (caseIter.hasNext()) {
-    		Case nextCase = caseIter.next();
-    		Trace trace = nextCase.getTrace();
-    		
-    		String s = "";
-    		Iterator<Event> eventIter = trace.iterator();
-    		while (eventIter.hasNext()) {
-    			Event event = eventIter.next();
-    			s = s.concat(event.getName());
-    		}
-    		
-    		traces.get(s).incrementCaseCount();
-    		if (!traces.containsKey(s)) {
-    			traces.put(s, trace);
-    		}
-    	}
+    	HashMap<String, Trace> traces = new HashMap<>();
+
+        for (Case nextCase : eventLog) {
+            Trace trace = nextCase.getTrace();
+
+            String s = "";
+            for (Event event : trace) {
+                s = s.concat(event.getName());
+            }
+
+            traces.get(s).incrementCaseCount();
+            if (!traces.containsKey(s)) {
+                traces.put(s, trace);
+            }
+        }
     	Trace[] out = {}; 
 		return traces.values().toArray(out);
     }
