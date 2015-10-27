@@ -109,7 +109,11 @@ private EventLog eventLog;
     			Event event = eventIter.next();
     			s = s.concat(event.getName());
     		}
-    		traces.put(s, trace);
+    		
+    		traces.get(s).incrementCaseCount();
+    		if (!traces.containsKey(s)) {
+    			traces.put(s, trace);
+    		}
     	}
     	Trace[] out = {}; 
 		return traces.values().toArray(out);
