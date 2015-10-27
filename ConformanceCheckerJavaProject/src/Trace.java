@@ -14,8 +14,6 @@ public class Trace implements Iterable<Event>
     
     private int producedTokens;
     
-    private List<Case> cases; //TODO suunatud assotiation, pole cases listi tarvis
-    
     private List<Event> events;
     
     private int numberOfCases;

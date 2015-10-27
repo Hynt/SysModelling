@@ -7,12 +7,8 @@ public class Place
     
     private int tokens;
     
-    private PetriNet petriNet;
     
-    //TODO not needed fields
-    private Transition transitionTP;
-    
-    private Transition transitionPT;
+
 
     public Place( String name ) {
 		super();

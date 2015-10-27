@@ -13,8 +13,8 @@ import org.processmining.models.graphbased.directed.petrinet.PetrinetGraph;
 import java.util.Iterator;
 import java.io.File;
 import org.processmining.plugins.pnml.Pnml;
-import org.deckfour.xes.extension.std.*;
 import java.util.Collection;
+import org.deckfour.xes.extension.std.*;
 import java.io.FileInputStream;
 
 

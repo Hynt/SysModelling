@@ -5,15 +5,11 @@ import java.util.List;
  */
 public class Transition
 {
-    private List<Arc_P_to_T> incomingArcs;
-    private List<Arc_T_to_P> outgoingArcs;
+    
 
-    //TODO Remove me
-    private PetriNet pteriNet;
+    private List<Place> placeTP;
     
-    private Place placeTP;
-    
-    private Place placePT;
+    private List<Place> placePT;
     
     private String eventLabel;
     
