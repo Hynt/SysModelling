@@ -15,7 +15,6 @@ public class Event implements Comparable<Event>
     
 
 public Event( Date timestamp, String name, Map event_attributes ) {
-		super();
 		this.timestamp = timestamp;
 		this.name = name;
 		this.event_attributes = event_attributes;
