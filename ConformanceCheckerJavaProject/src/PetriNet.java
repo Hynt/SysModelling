@@ -50,8 +50,8 @@ public class PetriNet
         {
             has_zero_tokens:
             {
-                for (Arc_P_to_T incomingArc : transition.getIncomingArcs()) {
-                    if (incomingArc.getPlace().getTokens() == 0) {
+                for(Place place : transition.getInputPlaces()){
+                    if(place.getTokens() == 0){
                         break has_zero_tokens;
                     }
                 }
