@@ -19,7 +19,10 @@ public class Place
     
     public void decrementTokens( )
     {
-        tokens++;
+        if (tokens <=0){
+            throw new RuntimeException();
+        }
+        tokens--;
     }
     
     public void removeAllTokens( )

@@ -39,4 +39,37 @@ public class Transition
                 "]";
 	}
 
+
+    public void fire(Trace trace) {
+        processInputPlaces(trace);
+        processOutputPlaces(trace);
+    }
+
+    private void processInputPlaces(Trace trace) {
+        for (Place place : inputPlaces) {
+            boolean success = false;
+            try{
+                place.decrementTokens();
+                success = true;
+            }
+            catch (RuntimeException e){
+                trace.incrementMissingTokens();
+            }
+            if (success){
+                trace.incrementConsumedTokens();
+            }
+            trace.decrementRemainingTokens();
+        }
+
+    }
+
+
+    private void processOutputPlaces(Trace trace) {
+        for (Place place : getOutputPlaces()) {
+            place.incrementTokens();
+            trace.incrementProducedTokens();
+            trace.incrementRemainingTokens();
+        }
+
+    }
 }
