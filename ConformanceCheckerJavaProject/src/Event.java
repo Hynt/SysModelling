@@ -12,11 +12,9 @@ public class Event implements Comparable<Event>
     
     private Map event_attributes;
     
-    private Trace traces; //TODO Suunatud assotiation siia
     
-    private Transition transitions; //TODO Event-transition assotiation yle vaadata
-    
-    public Event( Date timestamp, String name, Map event_attributes ) {
+
+public Event( Date timestamp, String name, Map event_attributes ) {
 		super();
 		this.timestamp = timestamp;
 		this.name = name;

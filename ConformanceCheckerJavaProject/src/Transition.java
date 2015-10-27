@@ -15,9 +15,6 @@ public class Transition
     
     private Place placePT;
     
-    //TODO Why is this in plural? Put just label instead (eventLabel below)
-    private Event events;
-    
     private String eventLabel;
     
     public Transition( List<Arc_P_to_T> incomingArcs,
