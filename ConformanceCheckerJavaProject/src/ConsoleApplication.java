@@ -2,6 +2,8 @@
 public class ConsoleApplication {
 
 	public static void main(String[] args) {
+		
+		System.out.println(args[0]);
 		if (args.length != 2) {
 			System.out.println("Incorrect number of arguments.");
 			System.out.println("1. Path to event log.");
@@ -18,6 +20,7 @@ public class ConsoleApplication {
 			System.out.println("Incorrect arguments entered.");
 			System.out.println("1. Path to event log.");
 			System.out.println("2. Path to petri net.");
+			System.exit(1);
 		}
 
 		System.out.println("Fitness: " + metrics.getFitness());

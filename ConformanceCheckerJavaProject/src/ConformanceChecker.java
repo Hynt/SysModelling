@@ -102,10 +102,11 @@ private EventLog eventLog;
                 s = s.concat(event.getName());
             }
 
-            traces.get(s).incrementCaseCount();
             if (!traces.containsKey(s)) {
                 traces.put(s, trace);
             }
+            traces.get(s).incrementCaseCount();
+
         }
     	Trace[] out = {}; 
 		return traces.values().toArray(out);
