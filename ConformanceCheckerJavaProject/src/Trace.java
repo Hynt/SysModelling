@@ -20,7 +20,7 @@ public class Trace implements Iterable<Event>
     
     private int numberOfCases;
     
-    public Trace(List<Event> events) {
+    public Trace( List<Event> events ) {
 		super();
 		this.events = events;
 	}
@@ -93,7 +93,7 @@ public class Trace implements Iterable<Event>
     }
 
 	@Override
-	public String toString() {
+    public String toString( ) {
 		return "Trace [missingTokens=" + missingTokens + ", remainingTokens="
 				+ remainingTokens + ", consumedTokens=" + consumedTokens
 				+ ", producedTokens=" + producedTokens + ", events=" + events
@@ -102,7 +102,7 @@ public class Trace implements Iterable<Event>
 	}
 
 	@Override
-	public Iterator<Event> iterator() {
+	public Iterator<Event> iterator( ) {
 		return events.iterator();
 	}
     

@@ -29,12 +29,12 @@ public class Event implements Comparable<Event>
     }
 
 	@Override
-	public int compareTo(Event o) {
+    public int compareTo( Event o ) {
 		return this.timestamp.compareTo(o.timestamp);
 	}
 
 	@Override
-	public String toString() {
+    public String toString( ) {
 		return "Event [timestamp=" + timestamp + ", name=" + name
 				+ ", event_attributes=" + event_attributes + "]";
 	}

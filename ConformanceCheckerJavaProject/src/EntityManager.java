@@ -1,24 +1,21 @@
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
-
+import java.io.InputStream;
 import org.deckfour.xes.model.*;
-
-import java.util.Date;
-
-import org.deckfour.xes.extension.std.*;
-import org.processmining.models.connections.GraphLayoutConnection;
 import org.processmining.models.graphbased.directed.petrinet.PetrinetEdge;
-import org.processmining.models.graphbased.directed.petrinet.PetrinetGraph;
-import org.processmining.models.graphbased.directed.petrinet.PetrinetNode;
-import org.processmining.models.graphbased.directed.petrinet.impl.PetrinetFactory;
 import org.processmining.models.semantics.petrinet.Marking;
+import java.util.List;
+import java.util.Collections;
+import org.processmining.models.graphbased.directed.petrinet.PetrinetNode;
+import java.util.Date;
+import org.processmining.models.graphbased.directed.petrinet.impl.PetrinetFactory;
+import org.processmining.models.connections.GraphLayoutConnection;
+import org.processmining.models.graphbased.directed.petrinet.PetrinetGraph;
+import java.util.Iterator;
+import java.io.File;
 import org.processmining.plugins.pnml.Pnml;
+import org.deckfour.xes.extension.std.*;
+import java.util.Collection;
+import java.io.FileInputStream;
 
 
 /**
@@ -103,7 +100,7 @@ public class EntityManager
         return new EventLog(cases);
     }
     
-    private static Place findPlaceByLabel(List<Place> places, String label)
+    private static Place findPlaceByLabel( List<Place> places, String label )
     {
     	Iterator<Place> iter = places.iterator();
     	while (iter.hasNext()) {

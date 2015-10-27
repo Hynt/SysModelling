@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.HashMap;
 
 /**
  * @(#) ConformanceChecker.java
@@ -94,7 +94,7 @@ private EventLog eventLog;
             (petriNet.numberOfPlaces() + petriNet.numberOfTransitions());
     }
     
-    public Trace[] createTraceSet(EventLog eventLog)
+    public Trace[] createTraceSet( EventLog eventLog )
     {
     	HashMap<String, Trace> traces = new HashMap<String, Trace>();
     	

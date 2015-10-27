@@ -11,9 +11,8 @@ public class Case
     
     private Trace trace;
 
-	private EventLog eventLog; //TODO Suunatud assotiation siia
-    
-    public Case( long iD, Map caseAttributes, Trace trace ) {
+	
+public Case( long iD, Map caseAttributes, Trace trace ) {
 		super();
 		ID = iD;
 		this.caseAttributes = caseAttributes;
@@ -26,7 +25,7 @@ public class Case
     }
 
 	@Override
-	public String toString() {
+    public String toString( ) {
 		return "Case [ID=" + ID + ", caseAttributes=" + caseAttributes
 				+ ", trace=" + trace + "]";
 	}

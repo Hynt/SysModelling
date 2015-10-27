@@ -8,16 +8,16 @@ public class PetriNet
     private List<Place> places;
     private List<Transition> transitions;
 
-    public PetriNet(List<Transition> transitions, List<Place> places) {
+    public PetriNet( List<Transition> transitions, List<Place> places ) {
         this.transitions = transitions;
         this.places = places;
     }
 
-    public List<Place> getPlaces() {
+    public List<Place> getPlaces( ) {
         return places;
     }
 
-    public List<Transition> getTransitions() {
+    public List<Transition> getTransitions( ) {
         return transitions;
     }
 
@@ -62,7 +62,7 @@ public class PetriNet
     }
 
 	@Override
-	public String toString() {
+    public String toString( ) {
 		return "PetriNet [places=" + places + ", transitions=" + transitions
 				+ "]";
 	}

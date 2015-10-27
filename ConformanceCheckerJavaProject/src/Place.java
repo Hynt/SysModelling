@@ -14,7 +14,7 @@ public class Place
     
     private Transition transitionPT;
 
-    public Place(String name) {
+    public Place( String name ) {
 		super();
 		this.name = name;
 		this.tokens = 0;
@@ -37,7 +37,7 @@ public class Place
     
     
 
-    public String getName() {
+    public String getName( ) {
 		return name;
 	}
 
@@ -51,7 +51,7 @@ public class Place
     }
 
 	@Override
-	public String toString() {
+    public String toString( ) {
 		return "Place [name=" + name + ", tokens=" + tokens + "]";
 	}
     
