@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+
 /**
  * @(#) ConformanceChecker.java
  */
@@ -15,7 +19,8 @@ private EventLog eventLog;
         //parse petrinet
         petriNet = EntityManager.getPetriNet("tests/test.pnlm");
         //Process all cases extracting unique trace
-        Trace[] traces = null;
+        createTraceSet(eventLog);
+        Trace[] traces = createTraceSet(eventLog);
         //SIIIAA TULEB T���
 
         return new Metrics(
@@ -64,5 +69,25 @@ private EventLog eventLog;
             (petriNet.numberOfPlaces() + petriNet.numberOfTransitions());
     }
     
-    
+    public Trace[] createTraceSet(EventLog eventLog)
+    {
+    	HashMap<String, Trace> traces = new HashMap<String, Trace>();
+    	
+    	Iterator<Case> caseIter = eventLog.iterator();
+    	while (caseIter.hasNext()) {
+    		Case nextCase = caseIter.next();
+    		Trace trace = nextCase.getTrace();
+    		
+    		String s = "";
+    		Iterator<Event> eventIter = trace.iterator();
+    		while (eventIter.hasNext()) {
+    			Event event = eventIter.next();
+    			s = s.concat(event.getName());
+    		}
+    		traces.put(s, trace);
+    	}
+    	Trace[] out = {}; 
+		return traces.values().toArray(out);
+    }
 }
+

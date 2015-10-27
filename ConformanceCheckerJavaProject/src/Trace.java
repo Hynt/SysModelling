@@ -1,9 +1,10 @@
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * @(#) Trace.java
  */
-public class Trace
+public class Trace implements Iterable<Event>
 {
     private int missingTokens;
     
@@ -98,6 +99,11 @@ public class Trace
 				+ ", producedTokens=" + producedTokens + ", events=" + events
 				+ ", numberOfCases=" + numberOfCases
 				+ ", enabledTransitionsCount=" + enabledTransitionsCount + "]";
+	}
+
+	@Override
+	public Iterator<Event> iterator() {
+		return events.iterator();
 	}
     
 }
