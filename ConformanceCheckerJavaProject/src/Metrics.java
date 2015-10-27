@@ -9,9 +9,6 @@ public class Metrics
     
     private float SSA;
 
-    public Metrics( ) {
-    }
-
     public Metrics( float fitness, float SBA, float SSA ) {
         this.fitness = fitness;
         this.SBA = SBA;

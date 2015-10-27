@@ -26,8 +26,8 @@ public class EntityManager
     public static PetriNet getPetriNet( String petriNetPath )
     {
     	
-    	LinkedList<Place> places = new LinkedList<Place>();
-    	LinkedList<Transition> transitions = new LinkedList<Transition>();
+    	LinkedList<Place> places = new LinkedList<>();
+    	LinkedList<Transition> transitions = new LinkedList<>();
     	
     	PnmlImportUtils ut = new PnmlImportUtils();
 		File f = new File (petriNetPath);
@@ -48,12 +48,12 @@ public class EntityManager
 			for (org.processmining.models.graphbased.directed.petrinet.elements.Transition pmTransition : pmTransitions) {
 				
 				// Parse arcs for transitions
-				LinkedList<Place> inputPlaces = new LinkedList<Place>();
+				LinkedList<Place> inputPlaces = new LinkedList<>();
 				for (PetrinetEdge<? extends PetrinetNode, ? extends PetrinetNode> pmArc : net.getInEdges(pmTransition)) {
 					inputPlaces.add(findPlaceByLabel(places, pmArc.getSource().getLabel() ));
 				}
 				
-				LinkedList<Place> outputPlaces = new LinkedList<Place>();
+				LinkedList<Place> outputPlaces = new LinkedList<>();
 				for (PetrinetEdge<? extends PetrinetNode, ? extends PetrinetNode> pmArc : net.getOutEdges(pmTransition)) {
 					outputPlaces.add(findPlaceByLabel(places, pmArc.getTarget().getLabel() ));
 				}
@@ -72,7 +72,7 @@ public class EntityManager
     public static EventLog getEventLog( String eventLogPath )
     {
     	
-    	LinkedList<Case> cases = new LinkedList<Case>();
+    	LinkedList<Case> cases = new LinkedList<>();
     	try {
 			XLog log = XLogReader.openLog(eventLogPath);
 			for(XTrace parsedCase:log){
@@ -80,7 +80,7 @@ public class EntityManager
 				
 				XAttributeMap caseAttributes = parsedCase.getAttributes();
 				
-				LinkedList<Event> events = new LinkedList<Event>();
+				LinkedList<Event> events = new LinkedList<>();
 				for(XEvent event : parsedCase){
 					String eventName = XConceptExtension.instance().extractName(event);
 					Date timestamp = XTimeExtension.instance().extractTimestamp(event);
@@ -102,11 +102,9 @@ public class EntityManager
     
     private static Place findPlaceByLabel( List<Place> places, String label )
     {
-    	Iterator<Place> iter = places.iterator();
-    	while (iter.hasNext()) {
-    		Place element = iter.next();
-    		if (element.getName().equals(label)) return element;
-    	}
+		for (Place element : places) {
+			if (element.getName().equals(label)) return element;
+		}
     	return null;
     }
     

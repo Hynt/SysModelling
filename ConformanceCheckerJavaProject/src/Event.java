@@ -6,11 +6,11 @@ import java.util.Date;
  */
 public class Event implements Comparable<Event>
 {
-    private Date timestamp;
+    private final Date timestamp;
     
-    private String name;
+    private final String name;
     
-    private Map event_attributes;
+    private final Map event_attributes;
     
     
 

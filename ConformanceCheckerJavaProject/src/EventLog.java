@@ -6,7 +6,7 @@ import java.util.List;
  */
 public class EventLog implements Iterable<Case>
 {
-    private List<Case> cases;
+    private final List<Case> cases;
 
     public EventLog( List<Case> cases ) {
         this.cases = cases;

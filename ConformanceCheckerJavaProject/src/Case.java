@@ -5,11 +5,11 @@ import java.util.Map;
  */
 public class Case
 {
-    private long ID;
+    private final long ID;
     
-    private Map caseAttributes;
+    private final Map caseAttributes;
     
-    private Trace trace;
+    private final Trace trace;
 
 	
 	public Case( long ID, Map caseAttributes, Trace trace ) {

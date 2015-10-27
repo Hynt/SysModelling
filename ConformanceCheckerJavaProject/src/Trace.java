@@ -14,17 +14,23 @@ public class Trace implements Iterable<Event>
     
     private int producedTokens;
     
-    private List<Event> events;
+    private final List<Event> events;
     
     private int numberOfCases;
 
     private int enabledTransitionsCount;
-    
-    public Trace( List<Event> events ) {
-		this.events = events;
-	}
 
-	public float getMeanNumberOfEnabledTransitions( ) {
+    public Trace(List<Event> events) {
+        this.events = events;
+        this.missingTokens = 0;
+        this.remainingTokens = 0;
+        this.consumedTokens = 0;
+        this.producedTokens = 0;
+        this.numberOfCases = 0;
+        this.enabledTransitionsCount = 0;
+    }
+
+    public float getMeanNumberOfEnabledTransitions( ) {
         return (float)enabledTransitionsCount/events.size();
 }
     

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.HashMap;
@@ -16,9 +15,9 @@ private EventLog eventLog;
     public Metrics getMetrics( String eventLogPath, String petriNetPath )
     {
         //Parse eventlog
-        eventLog = EntityManager.getEventLog("tests/test.xml");
+        eventLog = EntityManager.getEventLog(eventLogPath);
         //parse petrinet
-        petriNet = EntityManager.getPetriNet("tests/test.pnlm");
+        petriNet = EntityManager.getPetriNet(petriNetPath);
         //Process all cases extracting unique trace
         createTraceSet(eventLog);
         Trace[] traces = createTraceSet(eventLog);
@@ -26,25 +25,23 @@ private EventLog eventLog;
         for (Trace trace : traces) {
         	petriNet.initialize();
         	Transition transition;
-        	
-        	Iterator<Event> eventIter = trace.iterator();
-        	while (eventIter.hasNext()) {
-        		trace.addToEnabledTransitionsSum(petriNet.countEnabledTransitions());
-        		
-        		Event event = eventIter.next();
-        		event.getName();
-        		List<Transition> transitions = petriNet.getTransitions();
-        		int i = 0;
-        		while (true) {
-        			transition = transitions.get(i);
-        			if (transition.getEventLabel().equals(event.getName())) {
-        				break;
-        			}
-        			i++;
-        		}
-        		transition.fire();
-            	//TODO the fire stuff
-        	}
+
+            for (Event event : trace) {
+                trace.addToEnabledTransitionsSum(petriNet.countEnabledTransitions());
+
+                event.getName();
+                List<Transition> transitions = petriNet.getTransitions();
+                int i = 0;
+                while (true) {
+                    transition = transitions.get(i);
+                    if (transition.getEventLabel().equals(event.getName())) {
+                        break;
+                    }
+                    i++;
+                }
+                transition.fire();
+                //TODO the fire stuff
+            }
         	trace.addToEnabledTransitionsSum(petriNet.countEnabledTransitions());
         }
 
@@ -55,7 +52,7 @@ private EventLog eventLog;
         );
     }
     
-    public float calculateFitness( Trace[] traces )
+    private float calculateFitness( Trace[] traces )
     {
 
         int a = 0, b = 0, c = 0, d = 0;
@@ -71,7 +68,7 @@ private EventLog eventLog;
         return 1 - ((float)a/b+(float)c/d)/2;
     }
 
-    public float calculateSBA( Trace[] traces )
+    private float calculateSBA( Trace[] traces )
     {
         int tv = petriNet.numberOfTransitions();
 
@@ -86,7 +83,7 @@ private EventLog eventLog;
         return sum1 / ((tv-1)*sum2);
     }
 
-    public float calculateSSA( )
+    private float calculateSSA( )
     {
         return
             (float)(petriNet.numberOfTransitions() + 2)
@@ -94,7 +91,7 @@ private EventLog eventLog;
             (petriNet.numberOfPlaces() + petriNet.numberOfTransitions());
     }
     
-    public Trace[] createTraceSet( EventLog eventLog )
+    private Trace[] createTraceSet( EventLog eventLog )
     {
     	HashMap<String, Trace> traces = new HashMap<String, Trace>();
     	

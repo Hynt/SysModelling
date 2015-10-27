@@ -5,8 +5,8 @@ import java.util.List;
  */
 public class PetriNet
 {
-    private List<Place> places;
-    private List<Transition> transitions;
+    private final List<Place> places;
+    private final List<Transition> transitions;
 
     public PetriNet( List<Transition> transitions, List<Place> places ) {
         this.transitions = transitions;

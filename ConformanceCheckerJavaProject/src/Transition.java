@@ -6,10 +6,10 @@ import java.util.List;
 public class Transition
 {
 
-    private List<Place> inputPlaces;
-    private List<Place> outputPlaces;
+    private final List<Place> inputPlaces;
+    private final List<Place> outputPlaces;
 
-    private String eventLabel;
+    private final String eventLabel;
 
     public Transition(List<Place> inputPlaces, List<Place> outputPlaces, String eventLabel) {
         this.inputPlaces = inputPlaces;

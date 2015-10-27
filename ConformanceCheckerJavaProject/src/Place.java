@@ -1,11 +1,9 @@
-import java.util.Objects;
-
 /**
  * @(#) Place.java
  */
 public class Place
 {
-    private String name;
+    private final String name;
     
     private int tokens;
 
