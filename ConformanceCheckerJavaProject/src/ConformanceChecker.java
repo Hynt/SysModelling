@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * @(#) ConformanceChecker.java
@@ -21,7 +22,31 @@ private EventLog eventLog;
         //Process all cases extracting unique trace
         createTraceSet(eventLog);
         Trace[] traces = createTraceSet(eventLog);
-        //SIIIAA TULEB T���
+
+        for (Trace trace : traces) {
+        	petriNet.initialize();
+        	Transition transition;
+        	
+        	Iterator<Event> eventIter = trace.iterator();
+        	while (eventIter.hasNext()) {
+        		trace.addToEnabledTransitionsSum(petriNet.countEnabledTransitions());
+        		
+        		Event event = eventIter.next();
+        		event.getName();
+        		List<Transition> transitions = petriNet.getTransitions();
+        		int i = 0;
+        		while (true) {
+        			transition = transitions.get(i);
+        			if (transition.getEventLabel().equals(event.getName())) {
+        				break;
+        			}
+        			i++;
+        		}
+        		transition.fire();
+            	//TODO the fire stuff
+        	}
+        	trace.addToEnabledTransitionsSum(petriNet.countEnabledTransitions());
+        }
 
         return new Metrics(
                 calculateFitness(traces),
