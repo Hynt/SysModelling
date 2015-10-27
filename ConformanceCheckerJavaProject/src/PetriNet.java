@@ -60,6 +60,11 @@ public class PetriNet
         }
         return result;
     }
-    
+
+	@Override
+	public String toString() {
+		return "PetriNet [places=" + places + ", transitions=" + transitions
+				+ "]";
+	}
     
 }

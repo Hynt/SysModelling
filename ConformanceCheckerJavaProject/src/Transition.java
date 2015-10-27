@@ -8,15 +8,26 @@ public class Transition
     private List<Arc_P_to_T> incomingArcs;
     private List<Arc_T_to_P> outgoingArcs;
 
+    //TODO Remove me
     private PetriNet pteriNet;
     
     private Place placeTP;
     
     private Place placePT;
     
+    //TODO Why is this in plural? Put just label instead (eventLabel below)
     private Event events;
     
-    public String getEventLabel( )
+    private String eventLabel;
+    
+    public Transition(List<Arc_P_to_T> incomingArcs,
+			List<Arc_T_to_P> outgoingArcs, String eventLabel) {
+		this.incomingArcs = incomingArcs;
+		this.outgoingArcs = outgoingArcs;
+		this.eventLabel = eventLabel;
+	}
+
+	public String getEventLabel( )
     {
         return null;
     }
@@ -28,4 +39,11 @@ public class Transition
     public List<Arc_T_to_P> getOutgoingArcs() {
         return outgoingArcs;
     }
+
+	@Override
+	public String toString() {
+		return "Transition [incomingArcs=" + incomingArcs + ", outgoingArcs="
+				+ outgoingArcs + ", eventLabel=" + eventLabel + "]";
+	}
+    
 }

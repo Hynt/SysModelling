@@ -16,6 +16,9 @@ public class EventLog implements Iterable<Case>
     public Iterator<Case> iterator(){
         return cases.iterator();
     }
-    
-    
+
+	@Override
+	public String toString() {
+		return "EventLog [cases=" + cases + "]";
+	}
 }

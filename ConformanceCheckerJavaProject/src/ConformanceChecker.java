@@ -11,12 +11,12 @@ private EventLog eventLog;
     public Metrics getMetrics( String eventLogPath, String petriNetPath )
     {
         //Parse eventlog
-        eventLog = null;
+        eventLog = EntityManager.getEventLog("tests/test.xml");
         //parse petrinet
-        petriNet = null;
+        petriNet = EntityManager.getPetriNet("tests/test.pnlm");
         //Process all cases extracting unique trace
         Trace[] traces = null;
-        //SIIIAA TULEB TÖÖÖ
+        //SIIIAA TULEB Tï¿½ï¿½ï¿½
 
         return new Metrics(
                 calculateFitness(traces),

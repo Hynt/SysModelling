@@ -4,7 +4,7 @@ import java.util.Date;
 /**
  * @(#) Event.java
  */
-public class Event
+public class Event implements Comparable<Event>
 {
     private Date timestamp;
     
@@ -27,6 +27,15 @@ public class Event
     {
         return name;
     }
-    
-    
+
+	@Override
+	public int compareTo(Event o) {
+		return this.timestamp.compareTo(o.timestamp);
+	}
+
+	@Override
+	public String toString() {
+		return "Event [timestamp=" + timestamp + ", name=" + name
+				+ ", event_attributes=" + event_attributes + "]";
+	}
 }

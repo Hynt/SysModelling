@@ -90,4 +90,14 @@ public class Trace
     public int getNumberOfCases( ) {
         return numberOfCases;
     }
+
+	@Override
+	public String toString() {
+		return "Trace [missingTokens=" + missingTokens + ", remainingTokens="
+				+ remainingTokens + ", consumedTokens=" + consumedTokens
+				+ ", producedTokens=" + producedTokens + ", events=" + events
+				+ ", numberOfCases=" + numberOfCases
+				+ ", enabledTransitionsCount=" + enabledTransitionsCount + "]";
+	}
+    
 }

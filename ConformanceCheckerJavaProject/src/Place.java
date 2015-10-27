@@ -9,11 +9,18 @@ public class Place
     
     private PetriNet petriNet;
     
+    //TODO not needed fields
     private Transition transitionTP;
     
     private Transition transitionPT;
 
-    public void incrementTokens( )
+    public Place(String name) {
+		super();
+		this.name = name;
+		this.tokens = 0;
+	}
+
+	public void incrementTokens( )
     {
         
     }
@@ -30,13 +37,22 @@ public class Place
     
     
 
-    public int getTokens( )
+    public String getName() {
+		return name;
+	}
+
+	public int getTokens( )
     {
         return 0;
     }
 
-
     public boolean isStart( ) {
         return start;
     }
+
+	@Override
+	public String toString() {
+		return "Place [name=" + name + ", tokens=" + tokens + "]";
+	}
+    
 }

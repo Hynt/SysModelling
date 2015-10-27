@@ -24,6 +24,12 @@ public class Case
     {
         return trace;
     }
+
+	@Override
+	public String toString() {
+		return "Case [ID=" + ID + ", caseAttributes=" + caseAttributes
+				+ ", trace=" + trace + "]";
+	}
     
     
 }

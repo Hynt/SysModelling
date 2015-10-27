@@ -3,14 +3,17 @@
  */
 public abstract class Arc {
     Place place;
-    Transition transition;
 
-    public Arc(Place place, Transition transition) {
+    public Arc(Place place) {
         this.place = place;
-        this.transition = transition;
     }
 
     public Place getPlace() {
         return place;
     }
+
+	@Override
+	public String toString() {
+		return "Arc [place=" + place + "]";
+	}
 }
