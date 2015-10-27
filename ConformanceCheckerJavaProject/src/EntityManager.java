@@ -1,20 +1,28 @@
 import java.util.LinkedList;
 import java.io.InputStream;
+
 import org.deckfour.xes.model.*;
 import org.processmining.models.semantics.petrinet.Marking;
+
 import java.util.List;
 import java.util.Collections;
 import java.util.Date;
+
 import org.processmining.models.graphbased.directed.petrinet.impl.PetrinetFactory;
 import org.processmining.models.connections.GraphLayoutConnection;
+import org.processmining.models.graphbased.directed.petrinet.PetrinetEdge;
 import org.processmining.models.graphbased.directed.petrinet.PetrinetGraph;
+import org.processmining.models.graphbased.directed.petrinet.PetrinetNode;
 
 import java.io.File;
+
 import org.processmining.plugins.pnml.Pnml;
+
 import java.util.Collection;
+
 import org.deckfour.xes.extension.std.*;
+
 import java.io.FileInputStream;
-import java.util.stream.Collectors;
 
 
 /**
@@ -41,14 +49,22 @@ public class EntityManager
 			Collection<org.processmining.models.graphbased.directed.petrinet.elements.Transition> pmTransitions = net.getTransitions();
 			
 			// Parse places
-			places.addAll(pmPlaces.stream().map(pmPlace -> new Place(pmPlace.getLabel())).collect(Collectors.toList()));
+			for (org.processmining.models.graphbased.directed.petrinet.elements.Place pmPlace : pmPlaces) {
+				places.add(new Place(pmPlace.getLabel()));
+			}
 			for (org.processmining.models.graphbased.directed.petrinet.elements.Transition pmTransition : pmTransitions) {
 				
 				// Parse arcs for transitions
-				LinkedList<Place> inputPlaces = net.getInEdges(pmTransition).stream().map(pmArc -> findPlaceByLabel(places, pmArc.getSource().getLabel())).collect(Collectors.toCollection(() -> new LinkedList<>()));
-
-				LinkedList<Place> outputPlaces = net.getOutEdges(pmTransition).stream().map(pmArc -> findPlaceByLabel(places, pmArc.getTarget().getLabel())).collect(Collectors.toCollection(() -> new LinkedList<>()));
-
+				LinkedList<Place> inputPlaces = new LinkedList<>();
+				for (PetrinetEdge<? extends PetrinetNode, ? extends PetrinetNode> pmArc : net.getInEdges(pmTransition)) {
+					inputPlaces.add(findPlaceByLabel(places, pmArc.getSource().getLabel() ));
+				}
+				
+				LinkedList<Place> outputPlaces = new LinkedList<>();
+				for (PetrinetEdge<? extends PetrinetNode, ? extends PetrinetNode> pmArc : net.getOutEdges(pmTransition)) {
+					outputPlaces.add(findPlaceByLabel(places, pmArc.getTarget().getLabel() ));
+				}
+				
 				// New transitions with the parsed arcs
 				transitions.add( new Transition( inputPlaces, outputPlaces, pmTransition.getLabel()) );
 			}
