@@ -48,18 +48,18 @@ public class EntityManager
 			for (org.processmining.models.graphbased.directed.petrinet.elements.Transition pmTransition : pmTransitions) {
 				
 				// Parse arcs for transitions
-				LinkedList<Arc_P_to_T> arcsPtoT = new LinkedList<Arc_P_to_T>();
+				LinkedList<Place> inputPlaces = new LinkedList<Place>();
 				for (PetrinetEdge<? extends PetrinetNode, ? extends PetrinetNode> pmArc : net.getInEdges(pmTransition)) {
-					arcsPtoT.add(new Arc_P_to_T(findPlaceByLabel(places, pmArc.getSource().getLabel() )));
+					inputPlaces.add(findPlaceByLabel(places, pmArc.getSource().getLabel() ));
 				}
 				
-				LinkedList<Arc_T_to_P> arcsTtoP = new LinkedList<Arc_T_to_P>();
+				LinkedList<Place> outputPlaces = new LinkedList<Place>();
 				for (PetrinetEdge<? extends PetrinetNode, ? extends PetrinetNode> pmArc : net.getOutEdges(pmTransition)) {
-					arcsTtoP.add(new Arc_T_to_P(findPlaceByLabel(places, pmArc.getTarget().getLabel() )));
+					outputPlaces.add(findPlaceByLabel(places, pmArc.getTarget().getLabel() ));
 				}
 				
 				// New transitions with the parsed arcs
-				transitions.add( new Transition( arcsPtoT, arcsTtoP, pmTransition.getLabel()) );
+				transitions.add( new Transition( inputPlaces, outputPlaces, pmTransition.getLabel()) );
 			}
 
 		} catch (Exception e) {
