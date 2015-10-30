@@ -70,7 +70,8 @@ public class EntityManager
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println("Error parsing petrinet file.");
+			System.exit(1);
 		}
     	
         return new PetriNet(transitions, places);
@@ -102,7 +103,8 @@ public class EntityManager
 				cases.add( new Case(caseId, caseAttributes, caseTrace) );
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println("Error parsing event log file.");
+			System.exit(1);
 		}
         return new EventLog(cases);
     }
